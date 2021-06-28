@@ -28,6 +28,6 @@ export const Button = styled.button`
   transition: all ease-in-out 0.4s;
 
   &:hover {
-    background: #d9d8d8;
+    background: #c3c1c1;
   }
 `;

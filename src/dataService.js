@@ -14,7 +14,7 @@ export async function getMockedData({setData, setLoading}) {
     }
 
     async function getServerData() {
-        await sleep(3000);
+        await sleep(1000);
         const {data} = mockData;
         const {columns, result} = data;
 

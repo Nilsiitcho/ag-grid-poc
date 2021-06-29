@@ -125,54 +125,52 @@ export default ({
     }
 
     return (
-        <div style={{width: '70%'}}>
-            <div className='ag-theme-balham' style={tableStyle}>
-                <AgGridReact
-                    onGridReady={onGridReady}
-                    domLayout={autoHeight ? 'autoHeight' : 'normal'}
-                    localeText={locale}
-                    enterMovesDown={enterMovesDown}
-                    enterMovesDownAfterEdit
-                    enableCharts
-                    undoRedoCellEditing
-                    defaultColDef={{
-                        flex: 1,
-                        minWidth: 100,
-                        filter: true,
-                        sortable: true,
-                        resizable: true,
-                    }}
+        <div className='ag-theme-balham' style={tableStyle}>
+            <AgGridReact
+                onGridReady={onGridReady}
+                domLayout={autoHeight ? 'autoHeight' : 'normal'}
+                localeText={locale}
+                enterMovesDown={enterMovesDown}
+                enterMovesDownAfterEdit
+                enableCharts
+                undoRedoCellEditing
+                defaultColDef={{
+                    flex: 1,
+                    minWidth: 100,
+                    filter: true,
+                    sortable: true,
+                    resizable: true,
+                }}
 
-                    statusBar={hasStatusBar ? statusBarConfig : false}
-                    sideBar={hasSideBar ? sideBarConfig : false}
-                    rowGroupPanelShow={hasSideBar ? 'always' : false}
-                    enableRangeSelection={hasStatusBar}
-                    rowSelection={hasStatusBar ? 'multiple' : false}
-                    rowMultiSelectWithClick={!!hasStatusBar}
-                    suppressRowClickSelection={suppressRowClickSelection}
-                    onSelectionChanged={onSelectionChange}
-                    onFirstDataRendered={onFirstDataRendered}
-                    frameworkComponents={{
-                        customLoadingOverlay: GridLoading,
-                        actionButtonsRenderer: actionButtons ? actionButtons : () => 'Ação',
-                    }}
-                    aggFuncs={{
-                        'variation': variationCalc,
-                        'division': divisionCalc,
-                        'cagr': cagrCalc,
-                    }}
-                    loadingOverlayComponent={'customLoadingOverlay'}
-                    loadingOverlayComponentParams={{
-                        loadingMessage: 'Carregando...',
-                    }}
-                    getRowStyle={getRowStyle}
-                    groupIncludeFooter={groupFooter}
-                    groupIncludeTotalFooter={totalFooter}
-                    columnDefs={data.columns ? data.columns : []}
-                    rowData={data.data ? data.data : []}
-                >
-                </AgGridReact>
-            </div>
+                statusBar={hasStatusBar ? statusBarConfig : false}
+                sideBar={hasSideBar ? sideBarConfig : false}
+                rowGroupPanelShow={hasSideBar ? 'always' : false}
+                enableRangeSelection={hasStatusBar}
+                rowSelection={hasStatusBar ? 'multiple' : false}
+                rowMultiSelectWithClick={!!hasStatusBar}
+                suppressRowClickSelection={suppressRowClickSelection}
+                onSelectionChanged={onSelectionChange}
+                onFirstDataRendered={onFirstDataRendered}
+                frameworkComponents={{
+                    customLoadingOverlay: GridLoading,
+                    actionButtonsRenderer: actionButtons ? actionButtons : () => 'Ação',
+                }}
+                aggFuncs={{
+                    'variation': variationCalc,
+                    'division': divisionCalc,
+                    'cagr': cagrCalc,
+                }}
+                loadingOverlayComponent={'customLoadingOverlay'}
+                loadingOverlayComponentParams={{
+                    loadingMessage: 'Carregando...',
+                }}
+                getRowStyle={getRowStyle}
+                groupIncludeFooter={groupFooter}
+                groupIncludeTotalFooter={totalFooter}
+                columnDefs={data.columns ? data.columns : []}
+                rowData={data.data ? data.data : []}
+            >
+            </AgGridReact>
         </div>
     );
 };

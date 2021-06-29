@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {AppBody, Button, Header, HeaderText} from "./styles";
 import {getMockedData} from "./dataService";
+import TableAG from "./TableAGGrid/TableAG";
 
 const App = () => {
     const [data, setData] = useState({});
@@ -21,6 +22,8 @@ const App = () => {
                 <Button onClick={getData}>Pesquisar</Button>
             </Header>
 
+            <br/>
+            <TableAG data={data} loading={isDataLoading} height={"250px"} totalFooter/>
         </AppBody>
     );
 }

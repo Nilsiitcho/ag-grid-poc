@@ -41,9 +41,9 @@ export default ({
             } else {
                 gridApi.hideOverlay();
 
-                if (data.data && gridApi) {
-                    gridApi.setRowData(data.data);
-                }
+                // if (data.data && gridApi) {
+                //     gridApi.setRowData(data.data);
+                // }
 
                 if (data.data && totalPinnedOnTop) {
                     setTimeout(() => {
@@ -56,11 +56,11 @@ export default ({
         }
     }, [loading, gridApi]);
 
-    useEffect(() => {
-        if (data.data && gridApi) {
-            gridApi.setRowData(data.data);
-        }
-    }, [data, gridApi]);
+    // useEffect(() => {
+    //     if (data.data && gridApi) {
+    //         gridApi.setRowData(data.data);
+    //     }
+    // }, [data, gridApi]);
 
     function getRowStyle(params) {
         if (params.node.footer || params.node.rowPinned) {

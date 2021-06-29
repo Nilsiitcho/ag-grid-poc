@@ -18,7 +18,7 @@ const App = () => {
     return (
         <AppBody>
             <Header>
-                <HeaderText>Aplicação de teste</HeaderText>
+                <HeaderText>Teste de Deploy</HeaderText>
                 <Button onClick={getData}>Pesquisar</Button>
             </Header>
 

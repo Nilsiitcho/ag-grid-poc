@@ -17,17 +17,34 @@ export const AppBody = styled.div`
   margin: 0 auto;
 `;
 
+export const ButtonDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Button = styled.button`
   padding: 10px;
   border-radius: 5px;
-  color: #3AA335;
+  background: #3AA335;
+  color: white;
   font-weight: bold;
-  border: 1px solid #7914ec;
-  background: white;
+  border: 1px solid #3AA335;
   cursor: pointer;
   transition: all ease-in-out 0.4s;
 
   &:hover {
-    background: #c3c1c1;
+    background: #1d6d19;
+  }
+`;
+
+export const ClearButton = styled(Button)`
+  display: ${({show}) => show ? 'block' : 'none'};
+  margin-right: 5px;
+  border-color: #e74c3c;
+  background: #e74c3c;
+
+  &:hover {
+    background: #c0392b;
   }
 `;

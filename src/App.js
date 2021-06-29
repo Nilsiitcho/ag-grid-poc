@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {AppBody, Button, Header, HeaderText} from "./styles";
+import {AppBody, Button, Header, HeaderText, ButtonDiv, ClearButton} from "./styles";
 import {getMockedData} from "./dataService";
 import TableAG from "./TableAGGrid/TableAG";
 
@@ -15,11 +15,16 @@ const App = () => {
         await getMockedData(options);
     }
 
+
     return (
         <AppBody>
             <Header>
                 <HeaderText>Teste de Deploy</HeaderText>
-                <Button onClick={getData}>Pesquisar</Button>
+
+                <ButtonDiv>
+                    <ClearButton onClick={() => setData({})} show={!!data.columns}>Limpar</ClearButton>
+                    <Button onClick={getData}>Preencher</Button>
+                </ButtonDiv>
             </Header>
 
             <br/>

@@ -1,6 +1,5 @@
 import { buildFilterParams } from './filterBuilder';
 import { buildAlign } from './alignBuilder';
-import React from 'react';
 import { styleBuilder } from './styleBuilder';
 import { buildCellEditorParams } from './cellEditorParamsBuilder';
 import { buildRenderer } from './renderedBuilder';

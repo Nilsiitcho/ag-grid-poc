@@ -21,7 +21,6 @@ export async function getMockedData({setData, setLoading}) {
         return {
             columns: buildColumns(buildOptions()),
             data: result ? result : [],
-            rawColumns: columns,
         };
 
         function buildOptions() {

@@ -1,9 +1,10 @@
 import mockData from "./mockData";
+import {buildColumns} from "./columnBuilder/buildColumns";
 
 export async function getMockedData({setData, setLoading}) {
     try {
         setLoading(true);
-        const data = getServerData();
+        const data = await getServerData();
         setData(data);
     } catch (e) {
         console.error("Falha ao buscar dados: ");
@@ -13,8 +14,24 @@ export async function getMockedData({setData, setLoading}) {
     }
 
     async function getServerData() {
-        const data = mockData;
-        console.log(data);
-        return data;
+        await sleep(3000);
+        const {data} = mockData;
+        const {columns, result} = data;
+
+        return {
+            columns: buildColumns(buildOptions()),
+            data: result ? result : [],
+            rawColumns: columns,
+        };
+
+        function buildOptions() {
+            return {
+                rawCols: columns,
+            };
+        }
     }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
